@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * TODO: Enter file description here.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function test_civicrm_menu() {
+  $items = array();
+  $items['admin/config/TODO-SECTION/test_civicrm'] = array(
+    'title' => 'Administer Test CiviCRM',
+    'description' => 'Configure settings for Test CiviCRM.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('test_civicrm_settings_form'),
+    'access arguments' => array('administer test_civicrm'),
+    'file' => 'test_civicrm.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function test_civicrm_permission() {
+  $permissions = array();
+  $permissions['administer test_civicrm'] = array(
+    'title' => t('TODO: enter permission title'),
+    'description' => t('TODO: enter permission description'),
+  );
+
+  return $permissions;
+}

@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Contains tests for the Test CiviCRM module.
+ */
+
+/**
+ * Test case.
+ */
+class TestCivicrmTestCase extends DrupalWebTestCase {
+
+  /**
+   * Implements getInfo().
+   */
+  public static function getInfo() {
+    return array(
+      'name' => t('Test CiviCRM tests'),
+      'description' => t('TODO: write me.'),
+      'group' => t('Test CiviCRM'),
+    );
+  }
+
+  /**
+   * Implements setUp().
+   */
+  function setUp() {
+    // Call the parent with an array of modules to enable for the test.
+    parent::setUp(array('test_civicrm'));
+
+    // TODO: perform additional setup tasks here if required.
+  }
+
+  /**
+   * Test the module's functionality.
+   */
+  function testTodoChangeThisName() {
+    // TODO: write test!
+  }
+
+}

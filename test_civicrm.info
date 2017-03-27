@@ -1,0 +1,7 @@
+name = Test CiviCRM
+description = Execute CiviCRM test with drush
+dependencies[] = civicrm
+core = 7.x
+
+files[] = tests/test_civicrm.test
+configure = admin/config/TODO-SECTION/test_civicrm
