@@ -1,0 +1,17 @@
+{
+  "name": "civicrm_test",
+  "description": "Execute the PHPUNIT test with drush",    
+  "license": "AGPL-3.0",
+  "require": {
+    "php": ">=5.6",
+    "phpunit/phpunit": " 5.7.17"        
+  },
+  "config": {
+    "vendor-dir": "libraries"    
+  },
+  "extra": {    
+    "installer-paths": {
+      "phpunit": ["phpunit"]
+    } 
+  }
+}
