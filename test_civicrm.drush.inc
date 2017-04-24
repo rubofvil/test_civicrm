@@ -43,7 +43,7 @@ function drush_test_civicrm() {
     $configAndLogDir    
   );
   
-  foreach ($directories as $directory) {
+  foreach ($directories_to_seach as $directory) {
     foreach(rglob($directory. "/*Test.php")  as $file) {
       $command = new PHPUnit_TextUI_Command;
       $command->run(array('phpunit', '--log-junit', 'results.xml', $file), true);        
