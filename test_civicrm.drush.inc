@@ -44,7 +44,7 @@ function drush_test_civicrm() {
   );
   
   foreach ($directories as $directory) {
-    foreach(rglob($directory. "/*PHPUNITTest.php")  as $file) {    
+    foreach(rglob($directory. "/*Test.php")  as $file) {
       $command = new PHPUnit_TextUI_Command;
       $command->run(array('phpunit', '--log-junit', 'results.xml', $file), true);        
     }
