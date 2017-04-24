@@ -33,16 +33,23 @@ function drush_test_civicrm() {
    echo "Error getting global CiviCRM root";
    return;
   }
-  $config =CRM_Core_Config::singleton( );
+  $config =CRM_Core_Config::singleton( );  
   
-  $extensions_dir = $config->extensionsDir;  
+  $extensions_dir = $config->extensionsDir;      
+  $configAndLogDir = $config->configAndLogDir;  
   
+  $directories_to_seach = array(
+    $extensions_dir,
+    $configAndLogDir    
+  );
   
-  foreach(rglob($extensions_dir. "/*PHPUNITTest.php")  as $file) {
-    $command = new PHPUnit_TextUI_Command;
-    $command->run(array('phpunit', '--log-junit', 'results.xml', $file), true);    
-    print_r($command);  
+  foreach ($directories as $directory) {
+    foreach(rglob($directory. "/*PHPUNITTest.php")  as $file) {    
+      $command = new PHPUnit_TextUI_Command;
+      $command->run(array('phpunit', '--log-junit', 'results.xml', $file), true);        
+    }
   }
+  
     
   
 }
